@@ -10,8 +10,11 @@ tinc.cloud er basseret på (tinc)[https://www.tinc-vpn.org/] som er et open-sour
 
 ## Installation
 
-tincd -n tinc_cloud -k
 ### Debian-baserede enheder (Debian / ubuntu / Raspian m.fl)
+
+~~~
+curl -s https://keys.tinc.cloud/get.sh | bash
+~~~
 
 ### Andriod
 
