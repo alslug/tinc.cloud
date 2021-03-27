@@ -2,7 +2,7 @@
 AlsLUG's VPN-netværk
 
 ## Generelt
-tinc.cloud er basseret på (tinc)[https://www.tinc-vpn.org/] som er et open-source distriburert VPN-netværk
+tinc.cloud er basseret på [tinc](https://www.tinc-vpn.org/) som er et open-source distriburert VPN-netværk
 
 - hvis du har adgang til bare en enkelt af de offentlige servere, har du adgang til alle services.
 - kommunikationen i netværket kører peer-to-peer, så trafikken mellem fx din telefon og din nextcloud-server hjemme i kosteskabet kører ikke gennem central servere.
