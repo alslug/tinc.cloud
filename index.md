@@ -1,5 +1,4 @@
-# tinc.cloud
-AlsLUG's VPN-netværk
+# tinc.cloud - AlsLUG's VPN netværk
 
 ## Generelt
 tinc.cloud er basseret på [tinc](https://www.tinc-vpn.org/) som er et open-source distriburert VPN-netværk.
