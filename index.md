@@ -14,7 +14,7 @@ Fordelen ved at bruge tinc i stedet for fx OpenVPN er at vi ikke er afhængige a
 Tinc virker på mange platforme. Til nogle af dem har vi instruktioner  til installationen.
 
 * [Debian-baserede enheder (Debian / ubuntu / Raspian m.fl)](install-debian.md)
-* [Andriod telefoner og tablets](insall-android.md)
+* [Andriod telefoner og tablets](install-android.md)
 * Windows
 * IOS
 
