@@ -1,0 +1,16 @@
+# Nurnberg
+
+Address = 116.203.157.226
+Address = 2a01:4f8:c0c:eb73::1
+
+Subnet = 2001:470:53e3:3c0a:49ab:ed12:c458:e83/128
+Subnet = fc03:937:ed5a:3c0a:49ab:ed12:c458:e83/128
+
+-----BEGIN RSA PUBLIC KEY-----
+MIIBCgKCAQEAp1Ygh0ipsLcLpwN2qLvxIVS4YbHEDi9PfW6sEflbQ+D6H+J6FNXx
+Q9uMd2HaR0AHm62b/fx8k1+SobJaTeNVuSL5raSkWRgTDCTlxcsU79jlfts93ncI
+dbc2nUBh/Ef+BklJ2gC647vy0weYEKBtM6qJeJkbsQlFp0QaG6ky+ShqAjya8Qy+
+Mdf72E3Mjym1w0xFDi7mcxjQTBao0Z99z7VCyDqfvnK+9vCihRBQZJXn4pQYl+uR
+zgC7PoINiuC+WAu3DWy+gIBxuYDJC2vbRy+qZuXwzF8b/YyNS5OOIEvkegFttIZz
+acb8U7K6Os4sSvdNGdjHiTaDzwrOYKA7qwIDAQAB
+-----END RSA PUBLIC KEY-----
