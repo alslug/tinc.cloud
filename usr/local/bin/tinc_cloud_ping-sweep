@@ -4,9 +4,10 @@ CACHE=$( mktemp )
 
 cd /etc/tinc/tinc_cloud/
 for IP in $( grep -hir subnet hosts/ | sed "s/Subnet = //" | sed "s/\/128//" | sort ) ; do
-  echo $IP $( ssh -o connecttimeout=3 root@$IP hostname 2>/dev/null || echo =====OFFLINE===== )
-done > $CACHE
+  echo $IP $( ssh -o connecttimeout=3,batchmode=yes root@$IP hostname 2>/dev/null || echo =====OFFLINE===== )
+done
+#> $CACHE
 
-nano $CACHE
+#cat $CACHE
 
 rm $CACHE
