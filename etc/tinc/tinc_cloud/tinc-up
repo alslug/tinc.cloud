@@ -1,0 +1,37 @@
+#!/bin/bash
+
+INTERFACE=tinc_cloud
+
+NAME=`cat /etc/tinc/$INTERFACE/tinc.conf | grep Name= | sed "s/.*=//"`
+
+if false ; then
+  env
+  echo =================================================
+  echo =================================================
+  echo =================================================
+  echo =================================================
+  IP=`grep -i 'Subnet.*/32' /etc/tinc/$INTERFACE/hosts/$NAME | sed 's/.*=//' | sed 's/\/32//' | head -1`
+  echo =================================================
+  echo Name: $NAME
+  echo First /32 submet: $IP
+  ifconfig $INTERFACE $IP netmask 255.255.255.255
+fi
+
+
+
+
+for NET in `grep -i 'Subnet.*:.*/128' /etc/tinc/$INTERFACE/hosts/$NAME | sed 's/.*=//' ` ; do
+	echo =================================================
+	echo $NET
+	IP6=`	echo $NET | sed 's/\/.*//' | sed 's/:0$/:1/'	`
+	MASK6=`	echo $NET | sed 's/.*\///'	`
+	echo IPV6 submet: $IP6/$MASK6 route $IP6/64
+	ip -6 link set "$INTERFACE" up mtu 1400
+	ip -6 addr add $IP6/48 dev "$INTERFACE"
+	echo 1 > /proc/sys/net/ipv4/conf/all/forwarding
+	echo 1 > /proc/sys/net/ipv6/conf/all/forwarding
+done
+
+##ip -6 route add fc03:937:ed5a::/48 dev "$INTERFACE"
+##ip -6 route add default dev "$INTERFACE"
+echo =================================================
