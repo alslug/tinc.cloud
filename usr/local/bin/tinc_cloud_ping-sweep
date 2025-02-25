@@ -1,13 +1,24 @@
 #!/bin/bash
 
 CACHE=$( mktemp )
+PAD="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 cd /etc/tinc/tinc_cloud/
-for IP in $( grep -hir subnet hosts/ | sed "s/Subnet = //" | sed "s/\/128//" | sort ) ; do
-  echo $IP $( ssh -o connecttimeout=3 -o batchmode=yes root@$IP hostname 2>/dev/null || echo =====OFFLINE===== )
+for DEVICE in hosts/* ; do
+	for IP in $( grep -hir subnet $DEVICE | sed "s/Subnet = //" | sed "s/\/128//" | sort ) ; do
+		ping -c 5 $IP > $CACHE
+		echo $(
+					echo $( basename $DEVICE)$PAD											| cut -b 1-23
+				) $(
+					echo $IP$PAD													| cut -b 1-39
+				) $(
+					echo $( grep "packets transmitted"	$CACHE	| sed "s/.* \([0-9]*\%.*loss\).*/\1/" | sed "s/ /_/g"	)$PAD	| cut -b 1-16
+				) $(
+					echo $( grep "rtt min/avg/max/mdev"	$CACHE	| sed "s/.* = \(.* ms\)/\1/"				)$PAD	| cut -b 1-35
+				) $(
+					ssh -o connecttimeout=3 -o batchmode=yes root@$IP hostname 2>/dev/null || echo =====NO_SSH_CONNECTION=====
+				) | sed "s/X/ /g"
+	done
 done
-#> $CACHE
-
-#cat $CACHE
 
 rm $CACHE
