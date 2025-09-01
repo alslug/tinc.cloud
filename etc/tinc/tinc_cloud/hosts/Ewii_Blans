@@ -1,0 +1,17 @@
+# Blans
+
+Address = blans.tinc.cloud
+Address = 87.104.241.181
+Address = 2a06:4004:9007:ffff::2 
+
+Subnet = 2001:470:53e3:7cca:ebaf:dc93:3ed4:4b5f/128
+Subnet = fc03:937:ed5a:7cca:ebaf:dc93:3ed4:4b5f/128
+
+-----BEGIN RSA PUBLIC KEY-----
+MIIBCgKCAQEAxEzbzmBgu9zsq+h1/xuMVB28gCC+1ODjSBR9I3RfswkQxtPDX69v
+yvTzcz26skniKdV2oUShGm7EEv+2DWwJ8kC1N7Wi8Q6rR2OSb7Br8jMB6jEefNHs
+TiWAyXIMO7tMMN18KNzUj0hfuP3oacNAMVBKQkDdY6A1aaaZFrW44y9ctZSbO2Sq
+93YCJIO9BFKJzoaS8sbNy3jHVmuQ0AEA0WfPIuivegGIviH8tN35TaeYHzGmlxB0
+mAoKE/0j6v0xhI+pP5cJyinWKsEXDz3I6PuZq8d190puGnGfRUva+ztPNO/pKyeE
+Pp0Wa2dtIKr3dbfqwXZhMjRNiXXmx+AGpQIDAQAB
+-----END RSA PUBLIC KEY-----
